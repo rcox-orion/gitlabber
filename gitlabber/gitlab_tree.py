@@ -22,7 +22,7 @@ class GitlabTree:
         self.url = url
         self.root = Node("", root_path="", url=url)
         self.gitlab = Gitlab(url, private_token=token,
-                             ssl_verify=GitlabTree.get_ca_path())
+                             ssl_verify=False)
         self.method = method
         self.naming = naming
         self.archived = archived
