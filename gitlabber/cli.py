@@ -181,7 +181,13 @@ def parse_args(argv=None):
         '--version',
         action='store_true',
         help='print the version')
-
+    parser.add_argument(
+        '-s',
+        '--ssl-verify',
+        action='store_true',
+        default=True,
+        help="turn on/off ssl verification (used for custom CA cert envs)"
+    )
     args = parser.parse_args(argv)
     args_print = vars(args).copy()
     args_print['token'] = 'xxxxx'
